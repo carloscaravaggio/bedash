@@ -1,0 +1,48 @@
+@import url('./font/Poppins-Black.ttf');
+:root{
+	--color-light: rgba(132,139,200, 0.18);
+	--box-shadow: 0 2rem 3rem var(--color-light);
+	--offcanvas-width:270px;
+	--background-normal:#fff;
+	--topNavbarHeight: 56px;
+}
+
+body{
+	background-color: #fff;
+}
+.bg-success{
+	background-color: var(--color-success);
+}
+
+.sidebar-nav{
+	width: var(--offcanvas-width);
+	max-width: var(--offcanvas-width);
+	background-color: var(--background-normal);
+}
+
+
+@media (min-width: 992px){
+	body{
+		overflow: auto;
+	}
+	.offcanvas-backdrop::before{
+		display: none;
+	}
+	.offcanvas-backdrop{
+		display: none;
+	}
+	.main{
+		margin-left: var(--offcanvas-width);
+		overflow: auto;
+	}
+	.sidebar-nav{
+		transform: none;
+		visibility: visible !important;
+		top:var(--topNavbarHeight);
+		height: calc(100% - var(--topNavbarHeight));
+		background-color: #fff;
+		color: #000;
+		z-index: 1;
+	}
+	
+}
